@@ -1,0 +1,130 @@
+@orange : #fd680e;
+.orange{
+  border-color: @orange;
+}
+.light{
+  font-weight: 200;
+}
+.myNoteNav{
+  height: 50px;
+  background-color: #333;
+  color:#eee;
+    span{
+    line-height: 50px;
+    font-size:20px;
+    font-weight: 200;
+  }
+
+}
+ .profile{
+  position: absolute;
+  right: 8px;
+  top:50px;
+  background-color: #333  ;
+  color:#eee;
+  border-top: none;
+  list-style-type: none;
+  padding-left: 0;
+  li{
+    width: 100px;
+    height: 40px;
+    text-align: center; 
+    line-height: 40px;
+    cursor: pointer;
+    font-weight: 200;
+    a{
+      text-decoration: none;
+      color:#fff;
+    }
+  }
+  &first-child{
+    border-bottom: 2px solid #000;
+  }
+}
+.floatR{
+  float:right;
+  margin-right:35px;
+  cursor: pointer;
+}
+.btn-custom{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  width: 400px;
+  margin:0 auto;
+  height: 100px;
+  button{
+    margin-left: 20px;
+    &:visited,&:hover,&:active{
+      color:#ccc;
+    }
+
+  }
+}
+.btn-orange{
+  background-color: @orange;
+  font-weight: 200;
+  color:#eee;
+}
+
+body{
+  background: #eee;
+}
+.main-body{
+  min-height: 1080px;
+  width: 1000px;
+  margin:0 auto;
+  background: url('../../assets/images/bg.jpg');
+  article{
+    border:2px solid @orange;
+    border-bottom: none;
+    background: #eee;
+    &:first-child{
+    border-radius:  10px 10px 0 0;
+    }
+     &:last-child{
+    border:2px solid @orange;
+    border-radius: 0 0 10px 10px;
+    }
+    &:only-child{
+       border-radius: 10px;
+    }
+
+    div{
+      float: left;
+      min-height: 50px;
+      line-height: 50px;
+      text-align: center;
+      width: 116px;
+      border-left: 1px solid @orange;
+      &:nth-child(2){
+        white-space:nowrap;
+        overflow: hidden;
+        width: 630px;
+        text-overflow:ellipsis;
+        cursor: pointer;
+      }
+      &:first-child{
+        border-left: none;
+        width: 50px;
+      }
+    }
+    &:after{
+      content:"";
+      height: 0;
+      display: block;
+      clear: both;
+    }
+
+  }
+  .note-table{
+      width: 800px;
+      position: absolute;
+      top:150px;
+    }
+ 
+}
+.flex-body{
+  width: 800px;
+  margin:0 auto;
+}

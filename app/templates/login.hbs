@@ -1,0 +1,14 @@
+<div class='login-form'>
+  <h2>个人记事本</h2>
+  <div class="user">
+    <label class="userLabel">用户名</label>
+    {{input value = userName class="userInput"}}
+  </div>
+  <div class="pswd">
+     <label class="pswdLabel">密码</label>
+    {{input value = password type="password" class="paswdInput" }}
+  </div>
+  <button {{action "save"}} class="btn btn-primary">登录</button>
+</div>
+
+

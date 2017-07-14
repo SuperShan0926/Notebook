@@ -1,0 +1,31 @@
+{{outlet}}
+
+<div class='my-profile'>
+  <h2>修改密码</h2>
+  <div class="user">
+    <label class="userLabel">当前用户</label>
+    <span>
+      {{model.name}}
+    </span>
+  </div>
+  <div class="pswd">
+     <label class="pswdLabel">密码</label>
+      <span class="resetPswd" {{action 'resetPswd'}}>{{model.pswd}}</span>
+  {{#if resetStatus}}
+  <div class="resetArea">
+    <fieldset>
+    <label>输入新的密码：</label>{{input value=newPswd}}
+    </fieldset>
+    <div>
+      <button {{action "cofirmReset"}} class="btn orangeButton">确认</button>
+      <button {{action "cancel"}} class="btn orangeButton">取消</button>
+    </div>
+  </div>
+  {{/if}}
+  </div>
+  
+  <button class="btn orangeButton back" {{action "back"}}>返回</button>
+</div>
+
+
+

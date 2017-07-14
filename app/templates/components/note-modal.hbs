@@ -1,0 +1,29 @@
+  <div class="modal-dialog ">
+    <div class="modal-content modal-custom">
+      <div class="modal-header">
+        <h4 class="modal-title light" id="myModalLabel">
+        {{text.headText}}
+        </h4>
+      </div>
+      <div class="modal-body">
+      {{#if text.buttonText}}
+        <p><label class="col-md-2 light">选择日期</label>{{date-picker testDate="getSonData"}}</p>
+        <p>{{textarea value=txtContent class="col-md-10 light" placeholder="输入内容"}}</p>
+       {{else}}
+        <p>{{myNote.date}}</p>
+        <article id="note-view">{{myNote.content}}</article>
+       {{/if}}
+      </div>
+      <div class="modal-footer">
+        <div>
+        <button type="button" class="btn btn-default orange" data-dismiss="modal" {{action 'cancel'}}>关闭
+        </button>
+        {{#if text.buttonText}}
+            <button class="btn btn-orange"{{action 'modifyNote' eNote}}>
+              {{text.buttonText}}
+            </button>
+        {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>

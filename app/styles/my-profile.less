@@ -1,0 +1,125 @@
+
+@grey : #ccc;
+.orangeButton{
+    background-color: @orange;
+    font-weight: 200;
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    margin-top: 10px;
+    &:hover{
+        color: #fff;
+      }
+    }
+.my-profile{
+    position: relative;
+    border: 1px solid @grey;
+    width: 500px;
+    margin:100px auto;
+    background: #fff;
+    min-height: 270px;
+    border-radius: 5px;
+    padding: 20px;
+    span{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      float: right;
+      width: 150px;
+      font-weight: 200;
+      margin-right: 200px;
+      height:30px;
+      }
+    .resetPswd{
+      cursor: pointer;
+      border: 1px dashed @orange;
+    }
+    h2{
+      border-bottom: 1px solid @grey;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 1.25;
+      text-transform: none;
+      padding-bottom: 10px;
+      margin-top:5px;
+    }
+  .user{
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 5px;
+    &:after{
+      content:"";
+      display: block;
+      clear: both;
+    }
+  }
+    label{
+        color: #707070;
+        font-size: 14px;
+        float: left;
+        margin-left: 50px;
+        font-weight: 200;
+        height: 30px;
+        line-height: 30px;
+        margin-bottom: 0;
+      }
+  .pswd{
+    position: relative;
+    text-align: center;
+    padding-top: 5px;
+    &:after{
+      content:"";
+      display: block;
+      clear: both;
+    }
+  }
+  button{
+    right: 310px;
+    bottom: 30px;
+    width:80px;
+    height: 30px;
+    font-weight: 100;
+    width: 60px;
+    height: 30px;
+    background-color:@orange;
+    a{
+      text-decoration: none;
+      color:#fff;
+    }
+  }
+  .back{
+    position: absolute;
+  }
+}
+.resetArea{
+  border: 1px solid @grey;
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding: 20px;
+  top:32px;
+  left: 0px;
+  min-height: 150px;
+  background-color: #fff;  
+  label{
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

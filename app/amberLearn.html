@@ -1,0 +1,52 @@
+<!doctype html>  
+<html>  
+  <head>
+    <meta charset="utf-8">
+    <title>Ember.js • Guides</title> 
+  <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+
+<!--  <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.js"></script>-->  
+   <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.debug.js"></script>
+
+    <script src="http://cdn.bootcss.com/ember.js/2.1.0-beta.2/ember.prod.js"></script>
+<script type="text/javascript">  
+//  在这里编写Ember代码
+//  
+Person = Ember.Object.extend({
+  firstName:null,
+  lastName:null,
+  fullName:Ember.computed('firstName','lastName',function(){
+    return this.get('firstName')+"  "+this.get('lastName');
+  }),
+  fullNameChange: Ember.observer('fullName', function() {
+    console.log(this.get('firstName') + " " + this.get('lastName')); 
+    //return this.get('fullName');
+  })
+ });
+
+// 如果一个计算属性从来没有调用过get()方法获取的其值，观察者就不会被触发，即使是计算属性的值发生变化了。
+// 你可以这么认为，观察者是根据调用get()方法前后的值比较判断出计算属性值是否发生改变了。如果没调用过get()
+// 之前的改变观察者认为是没有变化。 通常我们不需要担心这个问题会影响到程序代码，因为几乎所有被观察的计算属
+// 性在触发前都会执行取值操作。如果你仍然担心观察者不会被触发，你可以在init()方法了执行一次get操作。这样
+// 足以保证你的观察在触发之前是执行过get操作的。 
+
+Person.reopen({
+  partOfNameChanged:Ember.observer('firstName','lastName',function(){
+    console.log('=======partOfNameChanged==========');
+    Ember.run.once(this, 'fullNameChange');    
+  })
+})
+var p1 = Person.create({
+  firstName:'A',
+  lastName:'shan'
+});
+p1.set('firstName','阿');
+p1.set('lastName','山');
+</script>  
+  </head>
+
+
+  <body>
+
+  </body>
+</html>  

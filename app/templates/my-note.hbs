@@ -1,0 +1,49 @@
+<nav class="myNoteNav">
+  <span>我的记事本</span>
+  <span class="floatR" {{action 'toggleShow'}}>
+  {{user}}
+  </span>
+</nav>
+{{#if isShow }}
+<ul class="profile light">
+  <li>{{#link-to 'profile'}}个人信息{{/link-to}}</li> 
+  <li{{action 'quit'}}>退出</li>
+</ul> 
+{{/if}}
+<div class="main-body">
+  <div class="flex-body">
+  {{#if buttonShow}}
+  <div class="btn-custom">
+    <button class="btn btn-orange" {{action 'newNote'}}>创建</button>
+    <button class="btn btn-orange" {{action 'editNote'}}>修改</button>
+    <button class="btn btn-orange" {{action 'deleteNote'}}>删除</button>
+  </div>
+  {{/if}}
+
+
+{{#if model}}
+<div class='note-table'>
+  {{#each model as |note index|}}
+  <article class="light">
+    <div>{{radio-button value=index passIdx='passIdx'}}</div>
+    <div {{action 'viewNote' index}}>{{note.content}}</div>
+    <div>{{note.date}}</div>
+  </article>
+  {{/each}}
+</div>
+
+{{else}}
+  <p>该用户很懒...什么也没留下</p>
+{{/if}}
+
+
+{{#if showModal }}
+  {{#note-modal cls = (action 'hide')  text = renderTxt renderNote=renderNote eNote=eNote showButton = buttonShow myNote=myNote currUser=user didChangeView='refreshView'}}
+  <h1>mynote</h1>
+  {{/note-modal}}
+{{/if}}
+{{outlet}}
+</div>
+</div>
+
+
